@@ -1,4 +1,4 @@
-# 🏷️ AutoCAD/ZWCAD Auto-Tagger Tool
+# 🏷️ AutoCAD Auto-Tagger Tool
 
 A streamlined background tagging utility for MText entities. This tool automates the process of sequential numbering and lettering for technical drawings, ensuring accuracy and speed.
 
