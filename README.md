@@ -5,7 +5,8 @@ A streamlined background tagging utility for MText entities. This tool automates
 ## 🛠️ Prerequisites
 
 * **OpenDCL Runtime**: This tool requires the OpenDCL engine to be installed on your system to render the user interface.
-* **AutoCAD**: Compatible with modern versions that support AutoLISP and OpenDCL.
+    * [Download OpenDCL Runtime (v9.1.5.2)](https://sourceforge.net/projects/opendcl/files/Stable/OpenDCL.Studio.ENU.9.1.5.2.msi/download)
+* **AutoCAD / ZWCAD**: Compatible with modern versions that support AutoLISP and OpenDCL.
 
 ## 🚀 Installation & Setup
 
