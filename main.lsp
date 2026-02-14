@@ -5,7 +5,7 @@
   ;; 1. Load the OpenDCL engine using the command-based method (No ARX)
   (if (not (member "opendcl.arx" (arx)))
     (progn
-      (command "OPENDCL")
+      (command "_OPENDCL")
       ;; Brief pause to allow the engine to initialize
       (while (< (getvar "CMDACTIVE") 0) (command))
     )
@@ -86,7 +86,7 @@
   (while is_tagging_active
 
     ;; 2. Wrapped selection
-    (setq ent (entsel "\nTagging Active: Select MText (or click STOP): "))
+    (setq ent (entsel "\nTagging Active: Select MText (or click ESC): "))
 
     (if (and is_tagging_active ent)
       (progn
