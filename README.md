@@ -1,42 +1,42 @@
-AutoCAD/ZWCAD Auto-Tagger Tool
-A streamlined background tagging utility for MText entities. This tool automates the process of sequential numbering and lettering for technical drawings.
+# 🏷️ AutoCAD/ZWCAD Auto-Tagger Tool
 
-🛠 Prerequisites
-OpenDCL Runtime: This tool requires the OpenDCL engine to be installed on your system.
+A streamlined background tagging utility for MText entities. This tool automates the process of sequential numbering and lettering for technical drawings, ensuring accuracy and speed.
 
-Download OpenDCL Runtime
+## 🛠️ Prerequisites
 
-AutoCAD: Compatible with most modern versions.
+* **OpenDCL Runtime**: This tool requires the OpenDCL engine to be installed on your system to render the user interface.
+* **AutoCAD**: Compatible with modern versions that support AutoLISP and OpenDCL.
 
-🚀 Installation & Setup
-Download Files: Ensure main.lsp and BT.odcl are in the same folder.
+## 🚀 Installation & Setup
 
-Configure Support Path:
+1.  **Download Files**: Ensure `main.lsp` and `BT.odcl` are saved in the same folder.
+2.  **Configure Support Path**:
+    * Open **Options** > **Files** tab.
+    * Add your folder to the **Support File Search Path**.
+3.  **Load the Script**:
+    * Type `APPLOAD` in the command line.
+    * Add `main.lsp` to the **Startup Suite** (briefcase icon) to load it automatically every time you open a drawing.
 
-Open Options > Files tab.
+## ⌨️ How to Use
 
-Add your folder to the Support File Search Path.
+1.  **Launch**: Type `BT` in the command line to open the tagging window.
+2.  **Configure**: Choose your Prefix, Starting Number, and Letter.
+    * *Note: Letters 'I' and 'O' are automatically excluded to prevent confusion with numbers '1' and '0'.*
+3.  **Activate**: Type **ACTV** to start the background tagging loop.
+4.  **Tag**: Click on any **MText** entity in your drawing. The tool will update the text and automatically increment the number for you.
+5.  **Stop**: Hit **ESC** to end the tagging session.
 
-Load Script:
+## 🔧 Features
 
-Type APPLOAD in the command line.
+* **Dynamic Numbering**: Automatically increments numbers after each successful tag.
+* **Smart Letter Reset**: Selecting a new number automatically resets the letter index to `-`.
+* **Error Handling**: The background loop is designed to survive **ESC** key presses without crashing the command.
+* **Filtered Lists**: Dropdowns are filtered for technical drawing standards (Excludes I, O).
 
-Add main.lsp to the Startup Suite (briefcase icon) to load it automatically every time you open a drawing.
+## ⚠️ Troubleshooting
 
-⌨️ How to Use
-Launch: Type BT to open the tagging interface.
+* **Command returns `nil`**: This usually means a syntax error prevented the script from loading. Ensure no invalid commands like `break` are in the code.
+* **"Can't reenter LISP"**: This occurs if the OpenDCL Form is trying to take focus during an active selection. Ensure `Keep Focus` is set to `False` in the Studio project.
 
-Setup: Choose your prefix, starting number, and letter.
-
-Note: Letters 'I' and 'O' are excluded to prevent confusion with numbers 1 and 0.
-
-Activate: Type "ACTV" to start the background loop. 
-
-Tag: Simply click on any MText entity in your drawing. The tool will update the text and automatically increment the number for you.
-
-Stop: Hit ESC to end the tagging session.
-
-⚠️ Troubleshooting
-Command returns nil: Ensure the .lsp file is fully loaded and you haven't renamed functions manually.
-
-"Can't reenter LISP": Make sure the "Keep Focus" property is set to False in OpenDCL Studio.
+---
+*Developed for efficient CAD workflows.*
